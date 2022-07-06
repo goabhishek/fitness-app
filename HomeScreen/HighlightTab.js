@@ -46,7 +46,7 @@ data=[
 ]
 
   return (
-<>
+
      <ScrollView scrollEventThrottle={16} >
        <FlatList data={data} keyExtractor={(item,index)=>`${index}`} 
        renderItem={({item,index})=>{
@@ -70,7 +70,7 @@ data=[
 
     
      </ScrollView>
-     </>
+   
   )
     }
 

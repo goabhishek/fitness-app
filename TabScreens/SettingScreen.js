@@ -57,7 +57,7 @@ const SettingScreen = ({ navigation }) => {
                   marginTop: 15,
                 },
               ]}
-              
+              onPress={() => navigation.navigate('HighlightTab')}
             >
               <Feather name='check-circle' color='green' size={20} style={styles.iconTab} />
               <Text

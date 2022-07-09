@@ -19,7 +19,7 @@ import SignInScreen from './Screens/SignInScreen';
 import InfoHome from './Screens/InfoHome';
 import { enableFreeze } from 'react-native-screens';
 import Tabnavigator from './Navigation/Tabnavigator';
-// import HighlightTab from './HomeScreen/HighlightTab';
+import HighlightTab from './HomeScreen/HighlightTab';
 
 enableFreeze(true);
 
@@ -37,7 +37,7 @@ const App = () => {
         <Stack.Screen name="InfoHome" component={InfoHome} options={{ headerShown: false }} />
         <Stack.Screen name="InfoHome2" component={InfoHome2} options={{ headerShown: false }} />
         <Stack.Screen name="Tabnavigator" component={Tabnavigator} options={{ headerShown: false }} />
-        {/* <Stack.Screen name="HighlightTab" component={HighlightTab} options={{ headerShown: false }} /> */}
+        <Stack.Screen name="HighlightTab" component={HighlightTab} options={{ headerShown: false }} />
 
       </Stack.Navigator>
  

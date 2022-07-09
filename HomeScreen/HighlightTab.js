@@ -1,10 +1,11 @@
 import { FlatList, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import React from 'react'
-import Video from 'react-native-video'
+// import Video from 'react-native-video'
 import {Card} from '@ui-kitten/components'
+import VideoPlayer from 'react-native-video-player'
 
 const HighlightTab = () => {
-data=[
+const DATA =[
     {
         id:1,
         name:"http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
@@ -46,11 +47,16 @@ data=[
 ]
 
   return (
+<>
+<Text>Hello</Text>
+<ScrollView scrollEventThrottle={16}>
 
+</ScrollView>
      <ScrollView scrollEventThrottle={16} >
-       <FlatList data={data} keyExtractor={(item,index)=>`${index}`} 
-       renderItem={({item,index})=>{
-        return<ScrollView style={{marginTop:10}}>
+       <FlatList data={DATA} keyExtractor={(item,index)=>`${index}`} 
+       renderItem = {({item,index}) => (
+      return
+        <ScrollView style={{marginTop:10}}>
             <Card header={()=>(
                 <Viev style={{alignItems:'center'}}>
                     <Text style={styles.title}>{item.name_1}</Text>
@@ -63,13 +69,16 @@ data=[
 
             )}
             >
-                {/* <VideoPlayer video={{uri:item.name}} autoplay={false} defaultMuted={true}  /> */}
+                <VideoPlayer video={{uri:item.name}} autoplay={false} defaultMuted={true}  />
             </Card>
         </ScrollView>
-       }}/>
-
+  )}
+       
+/>
     
      </ScrollView>
+   
+    </>
    
   )
     }

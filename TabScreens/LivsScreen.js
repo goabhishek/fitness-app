@@ -1,33 +1,40 @@
 import React from 'react';
-import { View, Text, TouchableOpacity, Dimensions, StyleSheet, StatusBar } from 'react-native';
+import {
+  View,
+  Text,
+  TouchableOpacity,
+  Dimensions,
+  StyleSheet,
+  StatusBar,
+} from 'react-native';
 import * as Animatable from 'react-native-animatable';
 
 // import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
-import { useTheme } from '@react-navigation/native';
+import {useTheme} from '@react-navigation/native';
 
-const LivsScreen = ({ navigation }) => {
-  const { colors } = useTheme();
+const LivsScreen = ({navigation}) => {
+  const {colors} = useTheme();
 
   return (
     <View style={styles.container}>
-      <StatusBar backgroundColor='#009387' barStyle='light-content' />
+      <StatusBar backgroundColor="#009387" barStyle="light-content" />
       <View style={styles.header}>
         <TouchableOpacity>
-        <Text>Logo</Text>
-        <View style={{flexDirection:"row"}}><
-          Animatable.View
-          animation='bounceIn'
-          duraton='1500'
-          source={{uri:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgeKt3zhpqsJYsvQwUC43vBmv0GtibnVg4wA&usqp=CAU'}}
-          style={styles.logo}
-          resizeMode='stretch'
-        />
-    </View>
+          <Text>Logo</Text>
+          <View style={{flexDirection: 'row'}}>
+            <Animatable.View
+              animation="bounceIn"
+              duraton="1500"
+              source={{
+                uri: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgeKt3zhpqsJYsvQwUC43vBmv0GtibnVg4wA&usqp=CAU',
+              }}
+              style={styles.logo}
+              resizeMode="stretch"
+            />
+          </View>
         </TouchableOpacity>
-        <View></View>
-
       </View>
-     
+
       <Animatable.View
         style={[
           styles.footer,
@@ -35,16 +42,14 @@ const LivsScreen = ({ navigation }) => {
             backgroundColor: colors.background,
           },
         ]}
-        animation='fadeInUpBig'
-      >
+        animation="fadeInUpBig">
         <Text
           style={[
             styles.title,
             {
               color: colors.text,
             },
-          ]}
-        >
+          ]}>
           Stay connected with LivsScreen
         </Text>
         <Text style={styles.text}>Sign in with account</Text>
@@ -65,25 +70,23 @@ const LivsScreen = ({ navigation }) => {
 
 export default LivsScreen;
 
-const { height } = Dimensions.get('screen');
+const {height} = Dimensions.get('screen');
 const height_logo = height * 0.08;
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#009387',
-    width:"100%",
-    height:"100%"
-
+    width: '100%',
+    height: '100%',
   },
   header: {
     flex: 1,
     // justifyContent: 'center',
     // alignItems: 'center',
-    width:"100%",
+    width: '100%',
     // marginTop:40,
-    margin:20
-
+    margin: 20,
   },
   footer: {
     flex: 3,
@@ -94,7 +97,7 @@ const styles = StyleSheet.create({
     // borderBottomRightRadius:30,
     paddingVertical: 20,
     paddingHorizontal: 20,
-    width:"100%"
+    width: '100%',
   },
   logo: {
     width: height_logo,
@@ -108,8 +111,6 @@ const styles = StyleSheet.create({
   button: {
     alignItems: 'flex-end',
     marginTop: 30,
-
-  
   },
   signIn: {
     width: 150,

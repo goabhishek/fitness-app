@@ -1,5 +1,15 @@
-import React, { useState } from 'react';
-import { View, Text, TouchableOpacity, TextInput, Platform, StyleSheet, StatusBar, Alert,Image } from 'react-native';
+import React, {useState} from 'react';
+import {
+  View,
+  Text,
+  TouchableOpacity,
+  TextInput,
+  Platform,
+  StyleSheet,
+  StatusBar,
+  Alert,
+  Image,
+} from 'react-native';
 import * as Animatable from 'react-native-animatable';
 // import { LinearGradient } from 'expo-linear-gradient';
 // import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
@@ -8,7 +18,7 @@ import Entypo from 'react-native-vector-icons/Entypo';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 
 // import Feather from 'react-native-vector-icons/Feather';
-import { useTheme } from '@react-navigation/native';
+import {useTheme} from '@react-navigation/native';
 
 // import { useTheme } from 'react-native-paper';
 
@@ -16,7 +26,7 @@ import { useTheme } from '@react-navigation/native';
 
 // import Users from '../model/users';
 
-const SignInScreen = ({ navigation }) => {
+const SignInScreen = ({navigation}) => {
   // const [data, setData] = useState({
   //   username: '',
   //   password: '',
@@ -26,7 +36,7 @@ const SignInScreen = ({ navigation }) => {
   //   isValidPassword: true,
   // });
 
-  const { colors } = useTheme();
+  const {colors} = useTheme();
 
   // const { signIn } = React.useContext(AuthContext);
 
@@ -104,18 +114,12 @@ const SignInScreen = ({ navigation }) => {
 
   return (
     <View style={styles.container}>
-      <StatusBar backgroundColor='#009387' barStyle='light-content' />
+      <StatusBar backgroundColor="#009387" barStyle="light-content" />
       <View style={styles.header}>
         <Text style={styles.text_header}>Welcome!</Text>
         <Text style={styles.text_header}>Login Screen</Text>
       </View>
-      <Animatable.View
-        animation='fadeInUpBig'
-        style={
-          styles.footer
-          
-        }
-      >
+      <Animatable.View animation="fadeInUpBig" style={styles.footer}>
         {/* <Text
           style={[
             styles.text_footer,
@@ -205,9 +209,13 @@ const SignInScreen = ({ navigation }) => {
               borderWidth: 1,
               marginTop: 15,
             },
-          ]}
-        >
-            <Ionicons name='call-outline' color={colors.text} size={20} style={styles.iconTab}/>
+          ]}>
+          <Ionicons
+            name="call-outline"
+            color={colors.text}
+            size={20}
+            style={styles.iconTab}
+          />
 
           <Text
             style={[
@@ -215,8 +223,7 @@ const SignInScreen = ({ navigation }) => {
               {
                 color: '#000',
               },
-            ]}
-          >
+            ]}>
             Login By Mobile Number
           </Text>
         </TouchableOpacity>
@@ -228,17 +235,20 @@ const SignInScreen = ({ navigation }) => {
               borderWidth: 1,
               marginTop: 15,
             },
-          ]}
-        >
-           <Entypo name='email' color={colors.text} size={20} style={styles.iconTab}  />
+          ]}>
+          <Entypo
+            name="email"
+            color={colors.text}
+            size={20}
+            style={styles.iconTab}
+          />
           <Text
             style={[
               styles.textSign,
               {
                 color: '#000',
               },
-            ]}
-          >
+            ]}>
             {/* <MaterialCommunityIcons name='gmail' color={colors.text} size={18} style={{marginRight:50}}  /> */}
             Login By Gmail
           </Text>
@@ -273,9 +283,13 @@ const SignInScreen = ({ navigation }) => {
               borderWidth: 1,
               marginTop: 15,
             },
-          ]}
-        >
-            <AntDesign name='apple-o' color={colors.text} size={20} style={styles.iconTab}  />
+          ]}>
+          <AntDesign
+            name="apple-o"
+            color={colors.text}
+            size={20}
+            style={styles.iconTab}
+          />
 
           <Text
             style={[
@@ -283,8 +297,7 @@ const SignInScreen = ({ navigation }) => {
               {
                 color: '#000',
               },
-            ]}
-          >
+            ]}>
             Log in By Apple ID
           </Text>
         </TouchableOpacity>
@@ -318,16 +331,14 @@ const SignInScreen = ({ navigation }) => {
                 marginTop: -10,
               },
             ]}
-            onPress={() => navigation.navigate('InfoHome')}
-          >
+            onPress={() => navigation.navigate('InfoHome')}>
             <Text
               style={[
                 styles.textSigN,
                 {
                   color: '#000',
                 },
-              ]}
-            >
+              ]}>
               Skip Login
             </Text>
           </TouchableOpacity>
@@ -351,8 +362,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 40,
     paddingBottom: 100,
     backgroundColor: '#009387',
-    margin:40
-
+    margin: 40,
   },
   footer: {
     // flex: 3,
@@ -407,11 +417,8 @@ const styles = StyleSheet.create({
     // alignItems: 'flex-start',
     flexDirection: 'row',
     borderRadius: 10,
-   
-    
-    
   },
-   signIN: {
+  signIN: {
     width: '100%',
     height: 50,
     justifyContent: 'center',
@@ -419,22 +426,17 @@ const styles = StyleSheet.create({
     // alignItems: 'flex-start',
     flexDirection: 'row',
     borderRadius: 10,
-    
   },
-  iconTab:{
-    marginLeft:60
+  iconTab: {
+    marginLeft: 60,
   },
   textSign: {
     fontSize: 18,
     fontWeight: 'bold',
-    marginLeft:40
-    
+    marginLeft: 40,
   },
   textSigN: {
     fontSize: 18,
     fontWeight: 'bold',
-  
-    
   },
-  
 });

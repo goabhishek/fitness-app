@@ -1,12 +1,20 @@
-import React, { useState } from 'react';
-import { View, Text, Button, StyleSheet, StatusBar, TouchableOpacity,TextInput } from 'react-native';
-import { useTheme } from '@react-navigation/native'; 
+import React, {useState} from 'react';
+import {
+  View,
+  Text,
+  Button,
+  StyleSheet,
+  StatusBar,
+  TouchableOpacity,
+  TextInput,
+} from 'react-native';
+import {useTheme} from '@react-navigation/native';
 import * as Animatable from 'react-native-animatable';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 
-const InfoHome1 = ({ navigation }) => {
+const InfoHome1 = ({navigation}) => {
   const [activeTab, setActivetab] = useState('Delivery');
-  const { colors } = useTheme();
+  const {colors} = useTheme();
 
   const theme = useTheme();
 
@@ -16,7 +24,7 @@ const InfoHome1 = ({ navigation }) => {
         <StatusBar barStyle={theme.dark ? 'light-content' : 'dark-content'} />
         <View style={styles.backbutton}>
           <TouchableOpacity onPress={() => navigation.goBack()}>
-            <AntDesign name='close' color={colors.text} size={25} />
+            <AntDesign name="close" color={colors.text} size={25} />
           </TouchableOpacity>
         </View>
         <View style={styles.header}>
@@ -25,35 +33,31 @@ const InfoHome1 = ({ navigation }) => {
         </View>
 
         <Animatable.View
-          animation='fadeInUpBig'
+          animation="fadeInUpBig"
           style={[
             styles.footer,
             {
               backgroundColor: colors.background,
             },
-          ]}
-        >
+          ]}>
           <View>
             <Text
               style={[
                 styles.textSign,
                 {
                   color: '#000',
-           
                 },
-              ]}
-            >
+              ]}>
               How tell are you ?
             </Text>
             <TextInput
-        style={styles.input}
-       
-        // value={number}
-        placeholder="Enter Hight"
-        keyboardType="numeric"
-      />
+              style={styles.input}
+              // value={number}
+              placeholder="Enter Hight"
+              keyboardType="numeric"
+            />
           </View>
-          <View >
+          <View>
             <Text
               style={[
                 styles.textSign,
@@ -61,17 +65,15 @@ const InfoHome1 = ({ navigation }) => {
                   color: '#000',
                   marginTop: 15,
                 },
-              ]}
-            >
+              ]}>
               How much do you weight ?
             </Text>
             <TextInput
-        style={styles.input}
-        
-        // value={number}
-        placeholder="Enter Weight"
-        keyboardType="numeric"
-      />
+              style={styles.input}
+              // value={number}
+              placeholder="Enter Weight"
+              keyboardType="numeric"
+            />
           </View>
 
           <View>
@@ -82,35 +84,30 @@ const InfoHome1 = ({ navigation }) => {
                   color: '#000',
                   marginTop: 15,
                 },
-              ]}
-            >
-             Are You Veg or Non-vegeterian ?
+              ]}>
+              Are You Veg or Non-vegeterian ?
             </Text>
           </View>
 
-          <View style={{ flexDirection: 'row', alignSelf: 'center', margin: 35 }}>
-      {/* Headerbutton */}
-      <HeaderButton
-        text='Vegeterian'
-        btncolor='black'
-        textColor='white'
-        activeTab={activeTab}
-        setActivetab={setActivetab}
-      />
-      <HeaderButton
-        text='non-vegeterian'
-        btncolor='white'
-        textColor='black'
-        activeTab={activeTab}
-        setActivetab={setActivetab}
-      />
+          <View style={{flexDirection: 'row', alignSelf: 'center', margin: 35}}>
+            {/* Headerbutton */}
+            <HeaderButton
+              text="Vegeterian"
+              btncolor="black"
+              textColor="white"
+              activeTab={activeTab}
+              setActivetab={setActivetab}
+            />
+            <HeaderButton
+              text="non-vegeterian"
+              btncolor="white"
+              textColor="black"
+              activeTab={activeTab}
+              setActivetab={setActivetab}
+            />
 
-      {/* Headerbutton */}
-    </View>
-
-
-
-
+            {/* Headerbutton */}
+          </View>
 
           <View
             style={[
@@ -118,8 +115,7 @@ const InfoHome1 = ({ navigation }) => {
               {
                 flexDirection: 'row',
               },
-            ]}
-          >
+            ]}>
             <TouchableOpacity
               style={[
                 styles.signIn,
@@ -129,16 +125,14 @@ const InfoHome1 = ({ navigation }) => {
                   // marginTop: 15,
                 },
               ]}
-              onPress={() => navigation.navigate('InfoHome2')}
-            >
+              onPress={() => navigation.navigate('InfoHome2')}>
               <Text
                 style={[
                   styles.textSign,
                   {
                     color: '#000',
                   },
-                ]}
-              >
+                ]}>
                 Skip
               </Text>
             </TouchableOpacity>
@@ -152,16 +146,14 @@ const InfoHome1 = ({ navigation }) => {
                   marginLeft: 110,
                 },
               ]}
-              onPress={() => navigation.navigate('InfoHome2')}
-            >
+              onPress={() => navigation.navigate('InfoHome2')}>
               <Text
                 style={[
                   styles.textSign,
                   {
                     color: '#000',
                   },
-                ]}
-              >
+                ]}>
                 Next
               </Text>
             </TouchableOpacity>
@@ -176,9 +168,7 @@ const InfoHome1 = ({ navigation }) => {
 
 export default InfoHome1;
 
-
-
-const HeaderButton = (props) => (
+const HeaderButton = props => (
   <View>
     <TouchableOpacity
       style={{
@@ -186,19 +176,19 @@ const HeaderButton = (props) => (
         paddingVertical: 15,
         paddingHorizontal: 30,
         borderRadius: 20,
-        
       }}
-      onPress={() => props.setActivetab(props.text)}
-    >
-      <Text style={{ color: props.activeTab === props.text ? 'white' : 'black', fontSize: 15, fontWeight: '900' }}>
+      onPress={() => props.setActivetab(props.text)}>
+      <Text
+        style={{
+          color: props.activeTab === props.text ? 'white' : 'black',
+          fontSize: 15,
+          fontWeight: '900',
+        }}>
         {props.text}
       </Text>
     </TouchableOpacity>
   </View>
 );
-
-
-
 
 const styles = StyleSheet.create({
   container: {
@@ -251,10 +241,10 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: 'bold',
   },
-  input:{
+  input: {
     marginRight: 10,
     marginTop: 10,
     backgroundColor: '#009387',
     borderRadius: 10,
-  }
+  },
 });

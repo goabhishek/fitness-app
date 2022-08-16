@@ -1,13 +1,19 @@
-import { View, Text, StyleSheet, StatusBar, TouchableOpacity, CheckBox } from 'react-native';
-import { useTheme } from '@react-navigation/native';
+import {
+  View,
+  Text,
+  StyleSheet,
+  StatusBar,
+  TouchableOpacity,
+} from 'react-native';
+import {useTheme} from '@react-navigation/native';
 import * as Animatable from 'react-native-animatable';
 import AntDesign from 'react-native-vector-icons/AntDesign';
-import React, { useState } from 'react';
-import { RadioButton } from 'react-native-paper';
+import React, {useState} from 'react';
+import {RadioButton} from 'react-native-paper';
 
-const InfoHome = ({ navigation }) => {
+const InfoHome = ({navigation}) => {
   const [checked, setChecked] = useState('first');
-  const { colors } = useTheme();
+  const {colors} = useTheme();
 
   const theme = useTheme();
 
@@ -17,7 +23,7 @@ const InfoHome = ({ navigation }) => {
         <StatusBar barStyle={theme.dark ? 'light-content' : 'dark-content'} />
         <View style={styles.backbutton}>
           <TouchableOpacity onPress={() => navigation.goBack()}>
-            <AntDesign name='close' color={colors.text} size={25} />
+            <AntDesign name="close" color={colors.text} size={25} />
           </TouchableOpacity>
         </View>
         <View style={styles.header}>
@@ -26,14 +32,13 @@ const InfoHome = ({ navigation }) => {
         </View>
 
         <Animatable.View
-          animation='fadeInUpBig'
+          animation="fadeInUpBig"
           style={[
             styles.footer,
             {
               backgroundColor: colors.background,
             },
-          ]}
-        >
+          ]}>
           <View>
             <Text
               style={[
@@ -41,31 +46,11 @@ const InfoHome = ({ navigation }) => {
                 {
                   color: '#000',
                 },
-              ]}
-            >
+              ]}>
               Select Gender
             </Text>
           </View>
-        <View style={styles.radiobtn}>
-          <View  >
-            <Text
-              style={[
-                styles.textSign,
-                {
-                  color: '#000',
-                },
-              ]}
-            >
-              Male
-              {/* Radio Button */}
-              <RadioButton
-                value='first'
-                status={checked === 'first' ? 'checked' : 'unchecked'}
-                onPress={() => setChecked('first')} 
-              />{' '}
-            </Text>
-          </View>
-          <View >
+          <View style={styles.radiobtn}>
             <View>
               <Text
                 style={[
@@ -73,40 +58,54 @@ const InfoHome = ({ navigation }) => {
                   {
                     color: '#000',
                   },
-                ]}
-              >
-                Female
+                ]}>
+                Male
                 {/* Radio Button */}
                 <RadioButton
-                  value='second'
-                  status={checked === 'second' ? 'checked' : 'unchecked'}
-                  onPress={() => setChecked('second')}
-                />
+                  value="first"
+                  status={checked === 'first' ? 'checked' : 'unchecked'}
+                  onPress={() => setChecked('first')}
+                />{' '}
               </Text>
             </View>
+            <View>
+              <View>
+                <Text
+                  style={[
+                    styles.textSign,
+                    {
+                      color: '#000',
+                    },
+                  ]}>
+                  Female
+                  {/* Radio Button */}
+                  <RadioButton
+                    value="second"
+                    status={checked === 'second' ? 'checked' : 'unchecked'}
+                    onPress={() => setChecked('second')}
+                  />
+                </Text>
+              </View>
             </View>
-            <View >
+            <View>
               <Text
                 style={[
                   styles.textSign,
                   {
                     color: '#000',
                   },
-                ]}
-              >
+                ]}>
                 Others
                 {/* Radio Button */}
                 <RadioButton
-                  value='third'
+                  value="third"
                   status={checked === 'third' ? 'checked' : 'unchecked'}
                   onPress={() => setChecked('third')}
-                 
                 />{' '}
               </Text>
             </View>
           </View>
 
-         
           <View>
             <Text
               style={[
@@ -115,8 +114,7 @@ const InfoHome = ({ navigation }) => {
                   color: '#000',
                   marginTop: 40,
                 },
-              ]}
-            >
+              ]}>
               How Many Times Do You Workout Perweek ?
             </Text>
             <TouchableOpacity
@@ -127,17 +125,14 @@ const InfoHome = ({ navigation }) => {
                   borderWidth: 1,
                   marginTop: 15,
                 },
-              ]}
-              
-            >
+              ]}>
               <Text
                 style={[
                   styles.textSign,
                   {
                     color: '#000',
                   },
-                ]}
-              >
+                ]}>
                 0 - 1
               </Text>
             </TouchableOpacity>
@@ -149,17 +144,14 @@ const InfoHome = ({ navigation }) => {
                   borderWidth: 1,
                   marginTop: 15,
                 },
-              ]}
-              
-            >
+              ]}>
               <Text
                 style={[
                   styles.textSign,
                   {
                     color: '#000',
                   },
-                ]}
-              >
+                ]}>
                 2 - 4
               </Text>
             </TouchableOpacity>
@@ -171,17 +163,14 @@ const InfoHome = ({ navigation }) => {
                   borderWidth: 1,
                   marginTop: 15,
                 },
-              ]}
-             
-            >
+              ]}>
               <Text
                 style={[
                   styles.textSign,
                   {
                     color: '#000',
                   },
-                ]}
-              >
+                ]}>
                 5 +
               </Text>
             </TouchableOpacity>
@@ -192,8 +181,7 @@ const InfoHome = ({ navigation }) => {
               {
                 flexDirection: 'row',
               },
-            ]}
-          >
+            ]}>
             <TouchableOpacity
               style={[
                 styles.signIn,
@@ -203,16 +191,14 @@ const InfoHome = ({ navigation }) => {
                   marginTop: 15,
                 },
               ]}
-              onPress={() => navigation.navigate('InfoHome1')}
-            >
+              onPress={() => navigation.navigate('InfoHome1')}>
               <Text
                 style={[
                   styles.textSign,
                   {
                     color: '#000',
                   },
-                ]}
-              >
+                ]}>
                 Skip
               </Text>
             </TouchableOpacity>
@@ -226,16 +212,14 @@ const InfoHome = ({ navigation }) => {
                   marginLeft: 110,
                 },
               ]}
-              onPress={() => navigation.navigate('InfoHome1')}
-            >
+              onPress={() => navigation.navigate('InfoHome1')}>
               <Text
                 style={[
                   styles.textSign,
                   {
                     color: '#000',
                   },
-                ]}
-              >
+                ]}>
                 Next
               </Text>
             </TouchableOpacity>

@@ -1,12 +1,18 @@
-import React, { useState } from 'react';
-import { View, Text, Button, StyleSheet, StatusBar, TouchableOpacity } from 'react-native';
-import { useTheme } from '@react-navigation/native';
+import React, {useState} from 'react';
+import {
+  View,
+  Text,
+  StyleSheet,
+  StatusBar,
+  TouchableOpacity,
+} from 'react-native';
+import {useTheme} from '@react-navigation/native';
 import * as Animatable from 'react-native-animatable';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 
-const InfoHome2 = ({ navigation }) => {
+const InfoHome2 = ({navigation}) => {
   const [activeTab, setActivetab] = useState('Delivery');
-  const { colors } = useTheme();
+  const {colors} = useTheme();
 
   const theme = useTheme();
 
@@ -16,7 +22,7 @@ const InfoHome2 = ({ navigation }) => {
         <StatusBar barStyle={theme.dark ? 'light-content' : 'dark-content'} />
         <View style={styles.backbutton}>
           <TouchableOpacity onPress={() => navigation.goBack()}>
-            <AntDesign name='close' color={colors.text} size={25} />
+            <AntDesign name="close" color={colors.text} size={25} />
           </TouchableOpacity>
         </View>
         <View style={styles.header}>
@@ -25,14 +31,13 @@ const InfoHome2 = ({ navigation }) => {
         </View>
 
         <Animatable.View
-          animation='fadeInUpBig'
+          animation="fadeInUpBig"
           style={[
             styles.footer,
             {
               backgroundColor: colors.background,
             },
-          ]}
-        >
+          ]}>
           <View>
             <Text
               style={[
@@ -40,46 +45,43 @@ const InfoHome2 = ({ navigation }) => {
                 {
                   color: '#000',
                 },
-              ]}
-            >
+              ]}>
               Let's start with Goal!
             </Text>
           </View>
-          <View style={{   marginTop: 20 ,}}>
-      {/* Headerbutton */}
-      <HeaderButton
-        text='Loss Weight ...?'
-        btncolor='black'
-        textColor='white'
-        activeTab={activeTab}
-        setActivetab={setActivetab}
-     
-      />
-      <HeaderButton
-        text='MainTain Weight ...?'
-        btncolor='white'
-        textColor='black'
-        activeTab={activeTab}
-        setActivetab={setActivetab}
-      
-      />
-      <HeaderButton
-        text='Gain Weight ...?'
-        btncolor='white'
-        textColor='black'
-        activeTab={activeTab}
-        setActivetab={setActivetab}
-      />
-      <HeaderButton
-        text='Regular Excersice'
-        btncolor='white'
-        textColor='black'
-        activeTab={activeTab}
-        setActivetab={setActivetab}
-      />
+          <View style={{marginTop: 20}}>
+            {/* Headerbutton */}
+            <HeaderButton
+              text="Loss Weight ...?"
+              btncolor="black"
+              textColor="white"
+              activeTab={activeTab}
+              setActivetab={setActivetab}
+            />
+            <HeaderButton
+              text="MainTain Weight ...?"
+              btncolor="white"
+              textColor="black"
+              activeTab={activeTab}
+              setActivetab={setActivetab}
+            />
+            <HeaderButton
+              text="Gain Weight ...?"
+              btncolor="white"
+              textColor="black"
+              activeTab={activeTab}
+              setActivetab={setActivetab}
+            />
+            <HeaderButton
+              text="Regular Excersice"
+              btncolor="white"
+              textColor="black"
+              activeTab={activeTab}
+              setActivetab={setActivetab}
+            />
 
-      {/* Headerbutton */}
-    </View>
+            {/* Headerbutton */}
+          </View>
 
           <View
             style={[
@@ -87,8 +89,7 @@ const InfoHome2 = ({ navigation }) => {
               {
                 flexDirection: 'row',
               },
-            ]}
-          >
+            ]}>
             <TouchableOpacity
               style={[
                 styles.signIn,
@@ -98,16 +99,14 @@ const InfoHome2 = ({ navigation }) => {
                   marginTop: 15,
                 },
               ]}
-              onPress={() => navigation.goBack()}
-            >
+              onPress={() => navigation.goBack()}>
               <Text
                 style={[
                   styles.textSign,
                   {
                     color: '#000',
                   },
-                ]}
-              >
+                ]}>
                 Skip
               </Text>
             </TouchableOpacity>
@@ -121,16 +120,14 @@ const InfoHome2 = ({ navigation }) => {
                   marginLeft: 110,
                 },
               ]}
-              onPress={() => navigation.navigate('Tabnavigator')}
-            >
+              onPress={() => navigation.navigate('Tabnavigator')}>
               <Text
                 style={[
                   styles.textSign,
                   {
                     color: '#000',
                   },
-                ]}
-              >
+                ]}>
                 Next
               </Text>
             </TouchableOpacity>
@@ -145,8 +142,7 @@ const InfoHome2 = ({ navigation }) => {
 
 export default InfoHome2;
 
-
-const HeaderButton = (props) => (
+const HeaderButton = props => (
   <View>
     <TouchableOpacity
       style={{
@@ -154,12 +150,15 @@ const HeaderButton = (props) => (
         paddingVertical: 18,
         paddingHorizontal: 16,
         borderRadius: 30,
-        marginTop:20
-
+        marginTop: 20,
       }}
-      onPress={() => props.setActivetab(props.text)}
-    >
-      <Text style={{ color: props.activeTab === props.text ? 'white' : 'black', fontSize: 15, fontWeight: '900' }}>
+      onPress={() => props.setActivetab(props.text)}>
+      <Text
+        style={{
+          color: props.activeTab === props.text ? 'white' : 'black',
+          fontSize: 15,
+          fontWeight: '900',
+        }}>
         {props.text}
       </Text>
     </TouchableOpacity>
@@ -217,8 +216,7 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: 'bold',
   },
-  choose:{
+  choose: {
     height: 150,
-
-  }
+  },
 });
